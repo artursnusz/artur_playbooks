@@ -1,0 +1,36 @@
+---
+- hosts: webservers
+  remote_user: gary
+  become: true
+  become_method: sudo
+  tasks:
+    - name: install Apache httpd server
+      apt:
+        name: apache2
+        state: latest
+    - name: overwrite default Apache config
+      template:
+        src: ./apache2.conf.j2
+        dest: /etc/apache2/apache2.conf
+    - name: Replace the default configuration
+      template:
+        src: ./templates/000-default.conf.j2
+        dest: /etc/apache2/sites-available/000-default.conf
+    - name: Enable mod_rewrite, mod_expires, mod_deflate
+      shell: a2enmod rewrite expires deflate
+    - name: Install PHP and associated modules
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php
+        - php-cli
+        - php-mysql
+        - php-pdo
+        - php-curl
+    - name: Add php info file to test a working state
+      template:
+        src: ./templates/info.php.j2
+        dest: /var/www/html/info.php
+    - name: Restart Apache following changes
+      shell: service apache2 restart
