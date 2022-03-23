@@ -1,7 +1,7 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
 def ROLE_NAME = "dmk-hpc"
-def SERVER_ENV = ["test", "development", "acceptance", "production"];
+def SERVER_ENV = ["test", "development", "acceptance", "production", "test2", "test3"];
 
 node {
     properties([
@@ -15,7 +15,9 @@ node {
                     "{\"key\": \"${SERVER_ENV[0]}\",\"value\": \"${SERVER_ENV[0]}\"}," +
                     "{\"key\": \"${SERVER_ENV[1]}\",\"value\": \"${SERVER_ENV[1]}\"}," +
                     "{\"key\": \"${SERVER_ENV[2]}\",\"value\": \"${SERVER_ENV[2]}\"}," +
-                    "{\"key\": \"${SERVER_ENV[3]}\",\"value\": \"${SERVER_ENV[3]}\"}" +
+                    "{\"key\": \"${SERVER_ENV[3]}\",\"value\": \"${SERVER_ENV[3]}\"}," +
+                    "{\"key\": \"${SERVER_ENV[4]}\",\"value\": \"${SERVER_ENV[4]}\"}," +
+                    "{\"key\": \"${SERVER_ENV[5]}\",\"value\": \"${SERVER_ENV[5]}\"}" +
                 "]}", 
                 description: 'Select for which environment pipeline should run'
             )
