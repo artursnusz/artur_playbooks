@@ -1,6 +1,5 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
-def ROLE_NAME = "sap-sandbox"
 def SERVER_ENV = ["test", "labo", "development", "acceptance", "quality", "production"];
 
 node("master") {
@@ -22,10 +21,6 @@ node("master") {
                 description: 'Select for which environment pipeline should run'
             )
         ]),
-        pipelineTriggers([
-            // schedule execution every 30 minutes, required plugin "Parameterized Scheduler"
-            parameterizedCron('H/30 * * * * %Server Environment=' + SERVER_ENV.join(","))
-        ])
     ])
     // requires plugin "AnsiColor"
     ansiColor('xterm') {
