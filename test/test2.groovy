@@ -2,7 +2,7 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
 def SERVER_ENV = ["test", "labo", "development", "acceptance", "quality", "production"];
 
-node("master") {
+node {
     properties([
         disableConcurrentBuilds(),
         parameters([
