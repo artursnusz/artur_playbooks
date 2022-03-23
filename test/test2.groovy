@@ -15,8 +15,8 @@ node("master") {
                     "{\"key\": \"${SERVER_ENV[0]}\",\"value\": \"${SERVER_ENV[0]}\"}," +
                     "{\"key\": \"${SERVER_ENV[1]}\",\"value\": \"${SERVER_ENV[1]}\"}," +
                     "{\"key\": \"${SERVER_ENV[2]}\",\"value\": \"${SERVER_ENV[2]}\"}," +
-					"{\"key\": \"${SERVER_ENV[3]}\",\"value\": \"${SERVER_ENV[3]}\"}," +
-					"{\"key\": \"${SERVER_ENV[4]}\",\"value\": \"${SERVER_ENV[4]}\"}," +
+		    "{\"key\": \"${SERVER_ENV[3]}\",\"value\": \"${SERVER_ENV[3]}\"}," +
+		    "{\"key\": \"${SERVER_ENV[4]}\",\"value\": \"${SERVER_ENV[4]}\"}," +
                     "{\"key\": \"${SERVER_ENV[5]}\",\"value\": \"${SERVER_ENV[5]}\"}" +
                 "]}", 
                 description: 'Select for which environment pipeline should run'
