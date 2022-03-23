@@ -3,7 +3,7 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 def ROLE_NAME = "dmk-hpc"
 def SERVER_ENV = ["test", "development", "acceptance", "production"];
 
-node("master") {
+node {
     properties([
         disableConcurrentBuilds(),
         parameters([
