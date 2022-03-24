@@ -47,7 +47,7 @@ node {
         }
         }
         if(!isError){
-            currentBuild.result = "SUCCESSdddd"
+            currentBuild.result = "SUCCESS"
 
         }
         else{
