@@ -46,7 +46,7 @@ node {
             echo e.toString();
         }
         }
-        if(!isError){
+        if(isError){
             currentBuild.result = "SUCCESS"
 
         }
