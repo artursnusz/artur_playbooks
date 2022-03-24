@@ -34,7 +34,7 @@ node {
         try{
             stage("${SERVER_ENV[i]}") {
                 if (params['Server Environment'].indexOf("${SERVER_ENV[i]}") >= 0) {
-                    echo "Test";
+                    sh 'exit 0';
                 } else {
                     echo "Nothing to do in the stage - stage not selected to run";
                     Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
@@ -46,7 +46,7 @@ node {
             echo e.toString();
         }
         }
-        if(isError){
+        if(!isError){
             currentBuild.result = "SUCCESS"
 
         }
