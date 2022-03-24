@@ -48,11 +48,11 @@ node {
         }
         }
         if(!isError){
-            currentBuild.result = "SUCCESS"
+            currentBuild.result = "FAILURE"
 
         }
         else{
-            currentBuild.result = "FAILURE"
+            currentBuild.result = "SUCCESS"
         }
     }
 }
