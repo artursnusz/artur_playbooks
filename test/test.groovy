@@ -4,7 +4,6 @@ def ROLE_NAME = "dmk-hpc"
 def SERVER_ENV = ["test", "development", "acceptance", "production", "test2", "test3"];
 
 node {
-    def isError = false;
     properties([
         disableConcurrentBuilds(),
         parameters([
@@ -30,6 +29,7 @@ node {
     ])
     // requires plugin "AnsiColor"
     ansiColor('xterm') {
+        def isError = false;
         for(int i=0; i<SERVER_ENV.size(); i++) {
         try{
             stage("${SERVER_ENV[i]}") {
