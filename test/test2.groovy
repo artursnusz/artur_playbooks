@@ -4,6 +4,7 @@ def ROLE_NAME = "dmk-hpc"
 def SERVER_ENV = ["test", "development", "acceptance", "production", "test2", "test3"];
 
 node {
+    def isError = false;
     properties([
         disableConcurrentBuilds(),
         parameters([
