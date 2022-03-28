@@ -46,9 +46,9 @@ node {
             //isError = true;
             //echo e.toString();
             //currentBuild.result = "SUCCESS"
-         catchError(stageResult: 'SUCCESS') {
-			echo "test"
-		}
+          catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                    sh "exit 1"
+           }
            
         }
         }
