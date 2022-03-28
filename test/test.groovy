@@ -45,7 +45,7 @@ node {
         catch(e){
             isError = true;
             echo e.toString() + "dupa";
-            stageResult."${SERVER_ENV[i]}" = "UNSTABLE"
+            stageResult.SERVER_ENV[i] = "UNSTABLE"
         }
         }
         if(!isError){
