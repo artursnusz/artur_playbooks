@@ -43,7 +43,7 @@ node {
             }
         }
         catch(e){
-            isError = false;
+            isError = true;
             echo e.toString() + "dupa";
         }
         }
