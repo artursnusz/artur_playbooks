@@ -43,7 +43,7 @@ node {
             }
         }
         catch(e){
-            isError = true;
+            isError = false;
             echo e.toString();
         }
         }
