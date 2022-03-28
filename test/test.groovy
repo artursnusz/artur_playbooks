@@ -45,9 +45,7 @@ node {
         catch(e){
             isError = true;
             echo e.toString();
-            echo currentBuild.result + "test"
-           
-            //currentBuild.result = "SUCCESS"
+            currentBuild.result = "SUCCESS"
         }
         if(!isError){
             currentBuild.result = "FAILURE"
