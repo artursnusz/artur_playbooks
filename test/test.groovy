@@ -49,6 +49,8 @@ node {
         }
         catch(e){
             isError = true;
+            def info = e.toString();
+            echo info + "pipa"
             echo e.toString() + "${SERVER_ENV[i]}"
         }
         if(!isError){
