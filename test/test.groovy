@@ -44,7 +44,7 @@ node {
         }
         catch(e){
             isError = true;
-            echo e.toString() + "dupa" + ${STAGE_NAME};
+            echo e.toString();
            
         }
         }
