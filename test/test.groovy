@@ -44,8 +44,8 @@ node {
         }
         catch(e){
             isError = true;
-            echo e.toString() + "dupa";
-            unstable(message: "${STAGE_NAME} is unstable")
+            echo e.toString() + "dupa" + ${STAGE_NAME};
+           
         }
         }
         if(!isError){
