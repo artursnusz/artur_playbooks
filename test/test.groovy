@@ -45,6 +45,7 @@ node {
         catch(e){
             isError = true;
             echo e.toString() + "${SERVER_ENV[i]}"
+            stageResult."${SERVER_ENV[i]}" = "UNSTABLE"
             //echo "${SERVER_ENV[i]}"
         }
         if(!isError){
