@@ -36,7 +36,6 @@ node {
                 if (params['Server Environment'].indexOf("${SERVER_ENV[i]}") >= 0) {
                     echo SERVER_ENV[i]
                     sh 'exit 1';
-                    stageResult = 'SUCCESS'
                 } else {
                     echo "Nothing to do in the stage - stage not selected to run";
                     Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
@@ -45,7 +44,9 @@ node {
         }
         catch(e){
             isError = true;
+            unstable('Script failed!')
             echo e.toString() + "dupa";
+            
         }
         }
         if(!isError){
