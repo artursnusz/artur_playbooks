@@ -34,7 +34,7 @@ node {
         try{
             stage("${SERVER_ENV[i]}") {
                 if (params['Server Environment'].indexOf("${SERVER_ENV[i]}") >= 0) {
-                    if(SERVER_ENV[i] == "test" || SERVER_ENV[i] == "test2" || ){
+                    if(SERVER_ENV[i] == "test" || SERVER_ENV[i] == "test2" ){
                         echo SERVER_ENV[i]
                         sh 'exit 1';
                     }
