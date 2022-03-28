@@ -50,10 +50,13 @@ node {
         catch(e){
             isError = true;
             def info = e.toString();
-            echo info + "pipa"
             echo e.toString() + "${SERVER_ENV[i]}"
+            if(info == "script returned exit code 1")
+            {
+                isError = true
+            }
         }
-        if(!isError){
+        if(isError){
             currentBuild.result = "FAILURE"
 
         }
