@@ -54,5 +54,6 @@ node {
         else{
             currentBuild.result = "SUCCESS"
         }
+        }
     }
 }
