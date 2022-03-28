@@ -44,9 +44,8 @@ node {
         }
         catch(e){
             isError = true;
-            unstable('Script failed!')
             echo e.toString() + "dupa";
-            
+            unstable('Script failed!')
         }
         }
         if(!isError){
