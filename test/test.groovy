@@ -37,6 +37,7 @@ node {
                     if(SERVER_ENV[i] == "test" || SERVER_ENV[i] == "test2" ){
                         echo SERVER_ENV[i]
                         sh 'exit 1';
+                        echo currentBuild.result + "test"
                     }
                     else{
                         echo "test"
@@ -49,13 +50,13 @@ node {
         }
         catch(e){
             isError = true;
-            //def info = e.toString();
-           //echo e.toString() + "${SERVER_ENV[i]}"
-            //if(info == "script returned exit code 1")
-            //{
+            def info = e.toString();
+            echo e.toString() + "${SERVER_ENV[i]}"
+            if(info == "script returned exit code 1")
+            {
                 //isError = true
-            //}
-            unstable('win10_chrome90_salesmanfailed!')
+            }
+
         }
         if(isError){
             currentBuild.result = "FAILURE"
