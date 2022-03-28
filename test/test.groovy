@@ -47,6 +47,9 @@ node {
             echo e.toString() + "${SERVER_ENV[i]}"
             currentStage.result = 'SUCCESS'
             //echo "${SERVER_ENV[i]}"
+            catchError(stageResult: 'FAILURE') {
+			sh "exit 1"
+		    }
         }
         if(!isError){
             currentBuild.result = "FAILURE"
