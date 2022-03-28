@@ -1,13 +1,19 @@
-stage('Sign Code') {
-    steps {
-        script {
-            try {
-                pwd()
-                sh pip.sh
-            }
-            catch (err) {                                        
-                unstable(message: "${STAGE_NAME} is unstable")
+stages {
+        stage('1') {
+            steps {
+                sh 'exit 0'
             }
         }
-    }
-}
+        stage('2') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "exit 1"
+                }
+            }
+        }
+        stage('3') {
+            steps {
+                sh 'exit 0'
+            }
+        }
+ }
