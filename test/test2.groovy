@@ -1,3 +1,4 @@
+node {
 stages {
         stage('1') {
             steps {
@@ -17,3 +18,4 @@ stages {
             }
         }
  }
+}
