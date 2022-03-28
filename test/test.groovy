@@ -43,6 +43,7 @@ node {
             }
         }
         catch(e){
+            currentBuild.result = 'SUCCESS'
             isError = true;
             echo e.toString() + "dupa";
         }
