@@ -45,6 +45,9 @@ node {
         catch(e){
             isError = true;
             echo e.toString();
+            catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                    echo "tee"
+             }
             //currentBuild.result = "SUCCESS"
         }
         if(!isError){
