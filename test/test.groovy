@@ -34,8 +34,13 @@ node {
         try{
             stage("${SERVER_ENV[i]}") {
                 if (params['Server Environment'].indexOf("${SERVER_ENV[i]}") >= 0) {
-                    echo SERVER_ENV[i]
-                    sh 'exit 1';
+                    if(SERVER_ENV[i] == "test"){
+                        echo SERVER_ENV[i]
+                        sh 'exit 1';
+                    }
+                    else{
+                        echo "test"
+                    }
                 } else {
                     echo "Nothing to do in the stage - stage not selected to run";
                     Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
