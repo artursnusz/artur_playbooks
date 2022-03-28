@@ -43,12 +43,9 @@ node {
             }
         }
         catch(e){
-            //isError = true;
-            //echo e.toString();
+            isError = true;
+            echo e.toString();
             //currentBuild.result = "SUCCESS"
-        
-           
-        }
         }
         if(!isError){
             currentBuild.result = "FAILURE"
