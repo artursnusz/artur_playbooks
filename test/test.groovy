@@ -44,8 +44,8 @@ node {
         }
         catch(e){
             isError = true;
-            echo e.toString();
-            currentBuild.result = "SUCCESS"
+            echo e.toString() + "${SERVER_ENV[i]}"
+            //echo "${SERVER_ENV[i]}"
         }
         if(!isError){
             currentBuild.result = "FAILURE"
