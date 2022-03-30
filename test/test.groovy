@@ -55,6 +55,7 @@ node {
             if(info == "script returned exit code 1")
             {
                 echo e.toString();
+                Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
                 //isError = true
             }
             //else{
