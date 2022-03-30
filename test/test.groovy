@@ -54,6 +54,7 @@ node {
             echo e.toString() + "${SERVER_ENV[i]}"
             if(info == "script returned exit code 1")
             {
+                echo "dupa";
                 echo e.toString();
                 Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
                 //isError = true
