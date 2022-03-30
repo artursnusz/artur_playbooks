@@ -57,10 +57,11 @@ node {
                 echo e.toString();
                 //isError = true
             }
-            else{
-            Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
-            }
+            //else{
+            //Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
+            //}
 
+        }
         }
         if(isError){
             currentBuild.result = "FAILURE"
