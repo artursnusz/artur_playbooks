@@ -66,11 +66,11 @@ node {
 
         }
         if(isError){
-            currentBuild.result = "FAILURE"
+            currentBuild.result = "SUCCESS"
 
         }
         else{
-            currentBuild.result = "SUCCESS"
+            currentBuild.result = "FAILURE"
         }
         }
     }
