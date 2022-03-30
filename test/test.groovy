@@ -54,7 +54,7 @@ node {
             //echo e.toString() + "${SERVER_ENV[i]}"
             if(info == "script returned exit code 1")
             {
-                throw e
+                echo e.toString();
                 //isError = true
             }
             else{
