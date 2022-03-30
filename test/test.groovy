@@ -52,6 +52,7 @@ node {
             isError = true;
             def info = e.toString();
             echo e.toString() + "${SERVER_ENV[i]}"
+            echo info;
             if(info == "script returned exit code 1")
             {
                 echo "dupa";
