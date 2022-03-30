@@ -53,7 +53,7 @@ node {
             def info = e.toString();
             echo e.toString() + "${SERVER_ENV[i]}"
             echo info;
-            if(info == "script returned exit code 1")
+            if(info.indexOf("script returned") >= 0)
             {
                 echo "dupa";
                 echo e.toString();
