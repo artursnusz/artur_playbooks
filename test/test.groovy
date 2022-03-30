@@ -52,11 +52,14 @@ node {
             isError = true;
             //def info = e.toString();
             //echo e.toString() + "${SERVER_ENV[i]}"
-            //if(info == "script returned exit code 1")
-            //{
+            if(info == "script returned exit code 1")
+            {
+                throw e
                 //isError = true
-            //}
+            }
+            else{
             Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
+            }
 
         }
         if(isError){
