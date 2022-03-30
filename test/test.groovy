@@ -62,7 +62,6 @@ node {
             //}
 
         }
-        }
         if(isError){
             currentBuild.result = "FAILURE"
 
