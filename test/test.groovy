@@ -57,12 +57,9 @@ node {
             {
                 //echo "dupa";
                 //echo e.toString();
-                //Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
-                throw "Error" + e.toString();
+                Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
                 //isError = true
             }
-            //isError = true
-            //throw "Error" + e
 
         }
         if(isError){
