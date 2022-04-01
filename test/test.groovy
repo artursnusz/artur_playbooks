@@ -49,7 +49,7 @@ node {
             }
         }
         catch(e){
-            isError = true;
+            //isError = true;
             def info = e.toString();
             def env =  "${SERVER_ENV[i]}"
             echo e.toString() + "${SERVER_ENV[i]}"
@@ -61,9 +61,12 @@ node {
                 Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
                 //isError = true
             }
+            else{
+                isError = true;
+            }
 
         }
-        if(isError){
+        if(!isError){
             currentBuild.result = "SUCCESS"
 
         }
