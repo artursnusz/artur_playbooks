@@ -51,9 +51,10 @@ node {
         catch(e){
             isError = true;
             def info = e.toString();
+            def env =  "${SERVER_ENV[i]}"
             echo e.toString() + "${SERVER_ENV[i]}"
             echo info;
-            if(info.indexOf("script returned") >= 0)
+            if(info.indexOf("script returned") >= 0 && env == "test")
             {
                 //echo "dupa";
                 //echo e.toString();
