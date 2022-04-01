@@ -55,14 +55,14 @@ node {
             echo info;
             if(info.indexOf("script returned") >= 0)
             {
-                echo "dupa";
-                echo e.toString();
-                Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
+                //echo "dupa";
+                //echo e.toString();
+                //Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
+                throw "Error" + e
                 //isError = true
             }
-            //else{
-            //Utils.markStageSkippedForConditional("${SERVER_ENV[i]}")
-            //}
+            //isError = true
+            //throw "Error" + e
 
         }
         if(isError){
