@@ -61,8 +61,8 @@ node {
                 throw "Error" + e
                 //isError = true
             }
-            //isError = true
-            //throw "Error" + e
+            isError = true
+            throw "Error" + e
 
         }
         if(isError){
